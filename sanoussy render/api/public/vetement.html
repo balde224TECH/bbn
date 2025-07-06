@@ -15,6 +15,41 @@
     <link rel="stylesheet" href="vetement.css">
 </head>
 <body>
+    <script>
+document.getElementById('orderForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const formData = {
+        productName: document.getElementById('productName').value,
+        productID: document.getElementById('productID').value,
+        whatsappNumber: document.getElementById('whatsappNumber').value,
+        customerNumber: document.getElementById('customerNumber').value,
+        comment: document.getElementById('comment').value
+    };
+
+    try {
+        const response = await fetch('https://votre-serveur.com/api/vetement', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        });
+
+        const data = await response.json();
+        
+        if (data.success) {
+            alert('Commande envoyée avec succès! Nous vous contacterons bientôt.');
+            document.getElementById('orderForm').reset();
+        } else {
+            alert('Erreur: ' + (data.error || 'Une erreur est survenue'));
+        }
+    } catch (error) {
+        alert('Erreur de connexion au serveur');
+        console.error('Error:', error);
+    }
+});
+</script>
     <!-- Navigation -->
     <nav class="main-nav navbar navbar-expand-lg">
         <div class="container">
