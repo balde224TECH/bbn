@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SanoussyFashion - Mode Tendances</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="vetement.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span style="color: var(--primary-color); font-weight: 700;">SANOUSSY</span>FASHION
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Chaussure">Chaussure</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Tshirt-pull">Tshirt-pull</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Collections">Collections</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-form">Commander</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="animate__animated animate__fadeIn">
+        <div class="container">
+            <h1>SanoussyFashion</h1>
+            <p>Découvrez notre collection exclusive de vêtements et chaussures tendance pour toutes les occasions.</p>
+            <div class="back-to-home floating">
+                <a href="#Chaussure">
+                    <i class="fas fa-chevron-down"></i> Voir la collection
+                </a>
+                <div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+                    <a href="index.html" style="display: inline-flex; align-items: center; text-decoration: none; background: linear-gradient(135deg, #6a5acd, #9370db); color: white; padding: 10px 20px; border-radius: 30px; font-weight: 500; transition: all 0.3s ease-in-out; box-shadow: 0 4px 10px rgba(106, 90, 205, 0.3);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(106, 90, 205, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 10px rgba(106, 90, 205, 0.3)'">
+                        <i class="fas fa-arrow-up" style="margin-right: 8px;"></i> Acceuil
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+   <div class="container">
+    <!-- Section chaussures -->
+    <section class="category-section animate__animated animate__fadeInUp" id="Chaussure">
+        <h2 class="category-title">Collection chaussures</h2>
+        <div class="photo-grid">
+            <!-- Produit 1 -->
+            <div class="product-card" data-product-id="VH001">
+                <div class="product-image-container">
+                    <div class="product-image" style="background-image: url('img/chaussuresM1 (1).jpeg');">
+                        <span class="product-badge">Nouveau</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title"> élégant </h3>
+                    <div class="product-price">350 000 GNF</div>
+                    <div class="product-id"><i class="fas fa-hashtag"></i> VH001</div>
+                    <button class="product-btn command-btn">
+                        <i class="fas fa-shopping-cart"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produit 2 -->
+            <div class="product-card" data-product-id="VH002">
+                <div class="product-image-container">
+                    <div class="product-image" style="background-image: url('img/chaussuresM1 (2).jpeg');">
+                        <span class="product-badge">Best-seller</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title"></h3>
+                    <div class="product-price">350 000 GNF</div>
+                    <div class="product-id"><i class="fas fa-hashtag"></i> VH002</div>
+                    <button class="product-btn command-btn">
+                        <i class="fas fa-shopping-cart"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produit 3 -->
+            <div class="product-card" data-product-id="CH001">
+                <div class="product-image-container">
+                    <div class="product-image" style="background-image: url('img/chaussuresM1 (3).jpeg');">
+                        <span class="product-badge">Tendance</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title"></h3>
+                    <div class="product-price">350 000 GNF</div>
+                    <div class="product-id"><i class="fas fa-hashtag"></i> CH001</div>
+                    <button class="product-btn command-btn">
+                        <i class="fas fa-shopping-cart"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produit 4 -->
+            <div class="product-card" data-product-id="CH002">
+                <div class="product-image-container">
+                    <div class="product-image" style="background-image: url('img/chaussuresM1 (4).jpeg');">
+                        <span class="product-badge">Édition limitée</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title"></h3>
+                    <div class="product-price">350 000 GNF</div>
+                    <div class="product-id"><i class="fas fa-hashtag"></i> CH002</div>
+                    <button class="product-btn command-btn">
+                        <i class="fas fa-shopping-cart"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produit 5 -->
+            <div class="product-card" data-product-id="CH003">
+                <div class="product-image-container">
+                    <div class="product-image" style="background-image: url('img/chaussuresM1 (5).jpeg');">
+                        <span class="product-badge">Premium</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title"></h3>
+                    <div class="product-price">350 000 GNF</div>
+                    <div class="product-id"><i class="fas fa-hashtag"></i> CH003</div>
+                    <button class="product-btn command-btn">
+                        <i class="fas fa-shopping-cart"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produit 6 -->
+            <div class="product-card" data-product-id="CH004">
+                <div class="product-image-container">
+                    <div class="product-image" style="background-image: url('img/chaussuresM1 (6).jpeg');">
+                        <span class="product-badge">Exclusif</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title"></h3>
+                    <div class="product-price">350 000 GNF</div>
+                    <div class="product-id"><i class="fas fa-hashtag"></i> CH004</div>
+                    <button class="product-btn command-btn">
+                        <i class="fas fa-shopping-cart"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produit 7 -->
+            <div class="product-card" data-product-id="CH005">
+                <div class="product-image-container">
+                    <div class="product-image" style="background-image: url('img/chaussuresM1 (7).jpeg');">
+                        <span class="product-badge">Sport</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title"></h3>
+                    <div class="product-price">350 000 GNF</div>
+                    <div class="product-id"><i class="fas fa-hashtag"></i> CH005</div>
+                    <button class="product-btn command-btn">
+                        <i class="fas fa-shopping-cart"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produit 8 -->
+            <div class="product-card" data-product-id="CH006">
+                <div class="product-image-container">
+                    <div class="product-image" style="background-image: url('img/chaussuresM1 (8).jpeg');">
+                        <span class="product-badge">Confort</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title"></h3>
+                    <div class="product-price">350 000 GNF</div>
+                    <div class="product-id"><i class="fas fa-hashtag"></i> CH006</div>
+                    <button class="product-btn command-btn">
+                        <i class="fas fa-shopping-cart"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produit 9 -->
+            <div class="product-card" data-product-id="CH007">
+                <div class="product-image-container">
+                    <div class="product-image" style="background-image: url('img/chaussuresM1 (9).jpeg');">
+                        <span class="product-badge">Vintage</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">Chaussures de ville élégantes</h3>
+                    <div class="product-price">350 000 GNF</div>
+                    <div class="product-id"><i class="fas fa-hashtag"></i> CH007</div>
+                    <button class="product-btn command-btn">
+                        <i class="fas fa-shopping-cart"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produit 10 -->
+            <div class="product-card" data-product-id="CH008">
+                <div class="product-image-container">
+                    <div class="product-image" style="background-image: url('img/chaussuresM1 (10).jpeg');">
+                        <span class="product-badge">Moderne</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title"></h3>
+                    <div class="product-price">350 000 GNF</div>
+                    <div class="product-id"><i class="fas fa-hashtag"></i> CH008</div>
+                    <button class="product-btn command-btn">
+                        <i class="fas fa-shopping-cart"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produit 11 -->
+            <div class="product-card" data-product-id="CH009">
+                <div class="product-image-container">
+                    <div class="product-image" style="background-image: url('img/chaussuresM1 (11).jpeg');">
+                        <span class="product-badge">Design</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title"></h3>
+                    <div class="product-price">350 000 GNF</div>
+                    <div class="product-id"><i class="fas fa-hashtag"></i> CH009</div>
+                    <button class="product-btn command-btn">
+                        <i class="fas fa-shopping-cart"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produit 12 -->
+            <div class="product-card" data-product-id="VH003">
+                <div class="product-image-container">
+                    <div class="product-image" style="background-image: url('img/chaussuresM1 (12).jpeg');">
+                        <span class="product-badge">Classique</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title"></h3>
+                    <div class="product-price">350 000 GNF</div>
+                    <div class="product-id"><i class="fas fa-hashtag"></i> VH003</div>
+                    <button class="product-btn command-btn">
+                        <i class="fas fa-shopping-cart"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produit 13 -->
+            <div class="product-card" data-product-id="VH004">
+                <div class="product-image-container">
+                    <div class="product-image" style="background-image: url('img/chaussuresM1 (13).jpeg');">
+                        <span class="product-badge">Élégance</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title"></h3>
+                    <div class="product-price">350 000 GNF</div>
+                    <div class="product-id"><i class="fas fa-hashtag"></i> VH004</div>
+                    <button class="product-btn command-btn">
+                        <i class="fas fa-shopping-cart"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produit 14 -->
+            <div class="product-card" data-product-id="VH005">
+                <div class="product-image-container">
+                    <div class="product-image" style="background-image: url('img/chaussuresM1 (14).jpeg');">
+                        <span class="product-badge">Chic</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title"></h3>
+                    <div class="product-price">350 000 GNF</div>
+                    <div class="product-id"><i class="fas fa-hashtag"></i> VH005</div>
+                    <button class="product-btn command-btn">
+                        <i class="fas fa-shopping-cart"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produit 15 -->
+            <div class="product-card" data-product-id="VH006">
+                <div class="product-image-container">
+                    <div class="product-image" style="background-image: url('img/chaussuresM1 (15).jpeg');">
+                        <span class="product-badge">Détente</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">Pantalon chino beige</h3>
+                    <div class="product-price">350 000 GNF</div>
+                    <div class="product-id"><i class="fas fa-hashtag"></i> VH006</div>
+                    <button class="product-btn command-btn">
+                        <i class="fas fa-shopping-cart"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produit 16 -->
+            <div class="product-card" data-product-id="VH007">
+                <div class="product-image-container">
+                    <div class="product-image" style="background-image: url('img/chaussuresM1 (16).jpeg');">
+                        <span class="product-badge">Urbain</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title"></h3>
+                    <div class="product-price">350 000 GNF</div>
+                    <div class="product-id"><i class="fas fa-hashtag"></i> VH007</div>
+                    <button class="product-btn command-btn">
+                        <i class="fas fa-shopping-cart"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produit 17 -->
+            <div class="product-card" data-product-id="VH008">
+                <div class="product-image-container">
+                    <div class="product-image" style="background-image: url('img/chaussuresM1 (17).jpeg');">
+                        <span class="product-badge">Décontracté</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title"></h3>
+                    <div class="product-price">350 000 GNF</div>
+                    <div class="product-id"><i class="fas fa-hashtag"></i> VH008</div>
+                    <button class="product-btn command-btn">
+                        <i class="fas fa-shopping-cart"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produit 18 -->
+            <div class="product-card" data-product-id="VH009">
+                <div class="product-image-container">
+                    <div class="product-image" style="background-image: url('img/chaussuresM1 (18).jpeg');">
+                        <span class="product-badge">Minimaliste</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title"></h3>
+                    <div class="product-price">350 000 GNF</div>
+                    <div class="product-id"><i class="fas fa-hashtag"></i> VH009</div>
+                    <button class="product-btn command-btn">
+                        <i class="fas fa-shopping-cart"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produit 19 -->
+            <div class="product-card" data-product-id="VH010">
+                <div class="product-image-container">
+                    <div class="product-image" style="background-image: url('img/chaussuresM1 (19).jpeg');">
+                        <span class="product-badge">Raffiné</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title"></h3>
+                    <div class="product-price">350 000 GNF</div>
+                    <div class="product-id"><i class="fas fa-hashtag"></i> VH010</div>
+                    <button class="product-btn command-btn">
+                        <i class="fas fa-shopping-cart"></i> Commander
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Produit 20 -->
+            <div class="product-card" data-product-id="CH020">
+                <div class="product-image-container">
+                    <div class="product-image" style="background-image: url('img/chaussuresM20 (1).jpeg');">
+                        <span class="product-badge">Nouvelle collection</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title"></h3>
+                    <div class="product-price">350 000 GNF</div>
+                    <div class="product-id"><i class="fas fa-hashtag"></i> CH020</div>
+                    <button class="product-btn command-btn">
+                        <i class="fas fa-shopping-cart"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produit 21 -->
+            <div class="product-card" data-product-id="CH021">
+                <div class="product-image-container">
+                    <div class="product-image" style="background-image: url('img/chaussuresM20 (2).jpeg');">
+                        <span class="product-badge">Éclatant</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title"></h3>
+                    <div class="product-price">350 000 GNF</div>
+                    <div class="product-id"><i class="fas fa-hashtag"></i> CH021</div>
+                    <button class="product-btn command-btn">
+                        <i class="fas fa-shopping-cart"></i> Commander
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produit 22 -->
+            <div class="product-card" data-product-id="CH022">
+                <div class="product-image-container">
+                    <div class="product-image" style="background-image: url('img/chaussuresM20 (3).jpeg');">
+                        <span class="product-badge">Signature</span>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title"></h3>
+                    <div class="product-price">350 000 GNF</div>
+                    <div class="product-id"><i class="fas fa-hashtag"></i> CH022</div>
+                    <button class="product-btn command-btn">
+                        <i class="fas fa-shopping-cart"></i> Commander
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+        </div>
+    </section>
+</div>
+        </section>
+
+        <!-- Section T-shirts et pulls -->
+<section class="category-section animate__animated animate__fadeInUp" id="Tshirt-pull">
+    <h2 class="category-title">Collection T-shirts & Pulls</h2>
+    <div class="photo-grid">
+        <!-- Produit 1 -->
+        <div class="product-card" data-product-id="TP001">
+            <div class="product-image-container">
+                <div class="product-image" style="background-image: url('img/Tshirt pullM (1).jpeg');">
+                    <span class="product-badge">Nouveau</span>
+                </div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Pull basique</h3>
+                <div class="product-price">280 000 GNF</div>
+                <div class="product-id"><i class="fas fa-hashtag"></i> TP001</div>
+                <button class="product-btn command-btn">
+                    <i class="fas fa-shopping-cart"></i> Commander
+                </button>
+            </div>
+        </div>
+
+        <!-- Produit 2 -->
+        <div class="product-card" data-product-id="TP002">
+            <div class="product-image-container">
+                <div class="product-image" style="background-image: url('img/Tshirt pullM (2).jpeg');">
+                    <span class="product-badge">Best-seller</span>
+                </div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">p</h3>
+                <div class="product-price">350 000 GNF</div>
+                <div class="product-id"><i class="fas fa-hashtag"></i> TP002</div>
+                <button class="product-btn command-btn">
+                    <i class="fas fa-shopping-cart"></i> Commander
+                </button>
+            </div>
+        </div>
+
+        <!-- Produit 3 
+        <div class="product-card" data-product-id="TP003">
+            <div class="product-image-container">
+                <div class="product-image" style="background-image: url('img/Tshirt pullM (3).jpeg');">
+                    <span class="product-badge">Tendance</span>
+                </div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Pull col rond</h3>
+                <div class="product-price">350 000 GNF</div>
+                <div class="product-id"><i class="fas fa-hashtag"></i> TP003</div>
+                <button class="product-btn command-btn">
+                    <i class="fas fa-shopping-cart"></i> Commander
+                </button>
+            </div>
+        </div>-->
+        
+
+        <!-- Produit 4 -->
+        <div class="product-card" data-product-id="TP004">
+            <div class="product-image-container">
+                <div class="product-image" style="background-image: url('img/Tshirt pullM (4).jpeg');">
+                    <span class="product-badge">Édition limitée</span>
+                </div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Pull oversize</h3>
+                <div class="product-price">280 000 GNF</div>
+                <div class="product-id"><i class="fas fa-hashtag"></i> TP004</div>
+                <button class="product-btn command-btn">
+                    <i class="fas fa-shopping-cart"></i> Commander
+                </button>
+            </div>
+        </div>
+
+        <!-- Produit 5 -->
+        <div class="product-card" data-product-id="TP005">
+            <div class="product-image-container">
+                <div class="product-image" style="background-image: url('img/Tshirt pullM (5).jpeg');">
+                    <span class="product-badge">Premium</span>
+                </div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Pull en laine</h3>
+                <div class="product-price">350 000 GNF</div>
+                <div class="product-id"><i class="fas fa-hashtag"></i> TP005</div>
+                <button class="product-btn command-btn">
+                    <i class="fas fa-shopping-cart"></i> Commander
+                </button>
+            </div>
+        </div>
+
+        <!-- Produit 6 -->
+        <div class="product-card" data-product-id="TP006">
+            <div class="product-image-container">
+                <div class="product-image" style="background-image: url('img/Tshirt pullM (6).jpeg');">
+                    <span class="product-badge">Exclusif</span>
+                </div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Pull simple</h3>
+                <div class="product-price">360 000 GNF</div>
+                <div class="product-id"><i class="fas fa-hashtag"></i> TP006</div>
+                <button class="product-btn command-btn">
+                    <i class="fas fa-shopping-cart"></i> Commander
+                </button>
+            </div>
+        </div>
+
+        <!-- Produit 7 -->
+        <div class="product-card" data-product-id="TP007">
+            <div class="product-image-container">
+                <div class="product-image" style="background-image: url('img/Tshirt pullM (7).jpeg');">
+                    <span class="product-badge">Sport</span>
+                </div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Pull respirant</h3>
+                <div class="product-price">350 000 GNF</div>
+                <div class="product-id"><i class="fas fa-hashtag"></i> TP007</div>
+                <button class="product-btn command-btn">
+                    <i class="fas fa-shopping-cart"></i> Commander
+                </button>
+            </div>
+        </div>
+
+        <!-- Produit 8
+        <div class="product-card" data-product-id="TP008">
+            <div class="product-image-container">
+                <div class="product-image" style="background-image: url('img/Tshirt pullM (8).jpeg');">
+                    <span class="product-badge">Confort</span>
+                </div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Pull léger</h3>
+                <div class="product-price">350 000 GNF</div>
+                <div class="product-id"><i class="fas fa-hashtag"></i> TP008</div>
+                <button class="product-btn command-btn">
+                    <i class="fas fa-shopping-cart"></i> Commander
+                </button>
+            </div>
+        </div> -->
+
+        <!-- Produit 9 -->
+        <div class="product-card" data-product-id="TP009">
+            <div class="product-image-container">
+                <div class="product-image" style="background-image: url('img/Tshirt pullM (9).jpeg');">
+                    <span class="product-badge">Vintage</span>
+                </div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">T-shirt rétro</h3>
+                <div class="product-price">300 000 GNF</div>
+                <div class="product-id"><i class="fas fa-hashtag"></i> TP009</div>
+                <button class="product-btn command-btn">
+                    <i class="fas fa-shopping-cart"></i> Commander
+                </button>
+            </div>
+        </div>
+
+        <!-- Produit 10 -->
+        <div class="product-card" data-product-id="TP010">
+            <div class="product-image-container">
+                <div class="product-image" style="background-image: url('img/Tshirt pullM (10).jpeg');">
+                    <span class="product-badge">Moderne</span>
+                </div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Tshirt à capuche</h3>
+                <div class="product-price">330 000 GNF</div>
+                <div class="product-id"><i class="fas fa-hashtag"></i> TP010</div>
+                <button class="product-btn command-btn">
+                    <i class="fas fa-shopping-cart"></i> Commander
+                </button>
+            </div>
+        </div>
+
+        <!-- Produit 11 -->
+        <div class="product-card" data-product-id="TP011">
+            <div class="product-image-container">
+                <div class="product-image" style="background-image: url('img/Tshirt pullM (11).jpeg');">
+                    <span class="product-badge">Design</span>
+                </div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">T-shirt artistique</h3>
+                <div class="product-price">350 000 GNF</div>
+                <div class="product-id"><i class="fas fa-hashtag"></i> TP011</div>
+                <button class="product-btn command-btn">
+                    <i class="fas fa-shopping-cart"></i> Commander
+                </button>
+            </div>
+        </div>
+
+        <!-- Produit 12 -->
+        <div class="product-card" data-product-id="TP012">
+            <div class="product-image-container">
+                <div class="product-image" style="background-image: url('img/Tshirt pullM (12).jpeg');">
+                    <span class="product-badge">Classique</span>
+                </div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Tshirt col V</h3>
+                <div class="product-price">280 000 GNF</div>
+                <div class="product-id"><i class="fas fa-hashtag"></i> TP012</div>
+                <button class="product-btn command-btn">
+                    <i class="fas fa-shopping-cart"></i> Commander
+                </button>
+            </div>
+        </div>
+
+        <!-- Produit 13 -->
+        <div class="product-card" data-product-id="TP013">
+            <div class="product-image-container">
+                <div class="product-image" style="background-image: url('img/Tshirt pullM (13).jpeg');">
+                    <span class="product-badge">Élégance</span>
+                </div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">T-shirt slim</h3>
+                <div class="product-price">300 000 GNF</div>
+                <div class="product-id"><i class="fas fa-hashtag"></i> TP013</div>
+                <button class="product-btn command-btn">
+                    <i class="fas fa-shopping-cart"></i> Commander
+                </button>
+            </div>
+        </div>
+
+        <!-- Produit 14 -->
+        <div class="product-card" data-product-id="TP014">
+            <div class="product-image-container">
+                <div class="product-image" style="background-image: url('img/Tshirt pullM (14).jpeg');">
+                    <span class="product-badge">Chic</span>
+                </div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Tshirt zippé</h3>
+                <div class="product-price">250 000 GNF</div>
+                <div class="product-id"><i class="fas fa-hashtag"></i> TP014</div>
+                <button class="product-btn command-btn">
+                    <i class="fas fa-shopping-cart"></i> Commander
+                </button>
+            </div>
+        </div>
+
+        <!-- Produit 15 -->
+        <div class="product-card" data-product-id="TP015">
+            <div class="product-image-container">
+                <div class="product-image" style="background-image: url('img/Tshirt pullM (15).jpeg');">
+                    <span class="product-badge">Détente</span>
+                </div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">T-shirt décontracté</h3>
+                <div class="product-price">350 000 GNF</div>
+                <div class="product-id"><i class="fas fa-hashtag"></i> TP015</div>
+                <button class="product-btn command-btn">
+                    <i class="fas fa-shopping-cart"></i> Commander
+                </button>
+            </div>
+        </div>
+
+        <!-- Produit 16 -->
+        <div class="product-card" data-product-id="TP016">
+            <div class="product-image-container">
+                <div class="product-image" style="background-image: url('img/Tshirt pullM (16).jpeg');">
+                    <span class="product-badge">Urbain</span>
+                </div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Tshirt streetwear</h3>
+                <div class="product-price">280 000 GNF</div>
+                <div class="product-id"><i class="fas fa-hashtag"></i> TP016</div>
+                <button class="product-btn command-btn">
+                    <i class="fas fa-shopping-cart"></i> Commander
+                </button>
+            </div>
+        </div>
+    </div>
+</section><!-- Section COLLECTIONS -->
+<section class="category-section animate__animated animate__fadeInUp" id="Collections">
+    <h2 class="category-title">Collections</h2>
+    <div class="photo-grid">
+        <!-- Produit 1 -->
+        <div class="product-card" data-product-id="CL001">
+            <div class="product-image-container">
+                <div class="product-image" style="background-image: url('img/collections (1).jpeg');">
+                    <span class="product-badge">Exclusivité</span>
+                </div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Collection Printemps</h3>
+                <div class="product-price">350 000 GNF</div>
+                <div class="product-id"><i class="fas fa-hashtag"></i> CL001</div>
+                <button class="product-btn command-btn">
+                    <i class="fas fa-shopping-cart"></i> Commander
+                </button>
+            </div>
+        </div>
+
+        <!-- Produit 2 -->
+        <div class="product-card" data-product-id="CL002">
+            <div class="product-image-container">
+                <div class="product-image" style="background-image: url('img/collections (2).jpeg');">
+                    <span class="product-badge">Nouveauté</span>
+                </div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Édition Limitée</h3>
+                <div class="product-price">350 000 GNF</div>
+                <div class="product-id"><i class="fas fa-hashtag"></i> CL002</div>
+                <button class="product-btn command-btn">
+                    <i class="fas fa-shopping-cart"></i> Commander
+                </button>
+            </div>
+        </div>
+
+        <!-- Produit 3 
+        <div class="product-card" data-product-id="CL003">
+            <div class="product-image-container">
+                <div class="product-image" style="background-image: url('img/collections (3).jpeg');">
+                    <span class="product-badge">Best-seller</span>
+                </div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Collection Classique</h3>
+                <div class="product-price">350 000 GNF</div>
+                <div class="product-id"><i class="fas fa-hashtag"></i> CL003</div>
+                <button class="product-btn command-btn">
+                    <i class="fas fa-shopping-cart"></i> Commander
+                </button>
+            </div>
+        </div> -->
+        
+        <!-- Produit 4 -->
+        <div class="product-card" data-product-id="CL004">
+            <div class="product-image-container">
+                <div class="product-image" style="background-image: url('img/collections (4).jpeg');">
+                    <span class="product-badge">Premium</span>
+                </div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Ligne Signature</h3>
+                <div class="product-price">350 000 GNF</div>
+                <div class="product-id"><i class="fas fa-hashtag"></i> CL004</div>
+                <button class="product-btn command-btn">
+                    <i class="fas fa-shopping-cart"></i> Commander
+                </button>
+            </div>
+        </div>
+
+        <!-- Produit 5 -->
+        <div class="product-card" data-product-id="CL005">
+            <div class="product-image-container">
+                <div class="product-image" style="background-image: url('img/collections (5).jpeg');">
+                    <span class="product-badge">Tendance</span>
+                </div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Collection Urbaine</h3>
+                <div class="product-price">350 000 GNF</div>
+                <div class="product-id"><i class="fas fa-hashtag"></i> CL005</div>
+                <button class="product-btn command-btn">
+                    <i class="fas fa-shopping-cart"></i> Commander
+                </button>
+            </div>
+        </div>
+
+        <!-- Produit 6 -->
+        <div class="product-card" data-product-id="CL006">
+                    <!-- Produit 6 -->
+        <div class="product-card" data-product-id="CL006">
+            <div class="product-image-container">
+                <div class="product-image" style="background-image: url('img/collections (6).jpeg');">
+                    <span class="product-badge">Luxe</span>
+                </div>
+            </div>
+            <div class="product-details">
+                <h3 class="product-title">Édition Prestige</h3>
+                <div class="product-price">350 000 GNF</div>
+                <div class="product-id"><i class="fas fa-hashtag"></i> CL006</div>
+                <button class="product-btn command-btn">
+                    <i class="fas fa-shopping-cart"></i> Commander
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+    <section class="comment-section animate__animated animate__fadeInUp" id="contact-form">
+        <h2 class="section-title">Passer commande</h2>
+        <form id="orderForm">
+            <div class="mb-3">
+                <label for="productName" class="form-label">Nom du produit</label>
+                <input type="text" id="productName" class="form-control" placeholder="Entrez le nom du produit qui vous intéresse" required>
+            </div>
+            <div class="mb-3">
+                <label for="whatsappNumber" class="form-label">Numéro WhatsApp client</label>
+                <input type="text" id="whatsappNumber" class="form-control" placeholder="Entrez votre numéro WhatsApp" required>
+            </div>
+            <div class="mb-3">
+                <label for="productID" class="form-label">ID du produit</label>
+                <input type="text" id="productID" class="form-control" placeholder="Entrez l'ID du produit (ex: VH001)" required>
+            </div>
+            <div class="mb-3">
+                <label for="customerNumber" class="form-label">Numéro de téléphone</label>
+                <input type="tel" id="customerNumber" class="form-control" placeholder="Entrez votre numéro pour que nous puissions vous contacter" required>
+            </div>
+            <div class="mb-3">
+                <label for="comment" class="form-label">Votre message (optionnel)</label>
+                <textarea id="comment" class="form-control" rows="5" placeholder="Dites-nous ce que vous cherchez ou posez-nous vos questions..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">
+                <i class="fas fa-paper-plane"></i> Envoyer la commande
+            </button>
+        </form>
+    </section>
+
+    <footer class="animate__animated animate__fadeInUp">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+            </div>
+            <p class="copyright">© 2025 SanoussyFashion - Tous droits réservés.</p>
+            <p>Livraison rapide | Paiement sécurisé | Service client 24/7</p>
+            <div class="back-to-home">
+                <a href="#">
+                    <i class="fas fa-arrow-up"></i> Retour en haut
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="vetement.js"></script>
+</body>
+</html>

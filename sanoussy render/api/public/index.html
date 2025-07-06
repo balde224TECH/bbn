@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SanoussyBusness - Boutique en ligne</title>
+    <!-- Importation de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Importation de Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Styles pour améliorer l'affichage mobile */
+        @media (max-width: 640px) {
+            .dropdown-content {
+                width: 100%;
+                left: 0;
+                right: 0;
+            }
+            .product-card {
+                margin-bottom: 1rem;
+            }
+            .hero-gradient {
+                padding-top: 6rem;
+                padding-bottom: 6rem;
+            }
+            .nav-links {
+                display: none;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        
+        /* Styles communs */
+        .hero-gradient {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+        }
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .product-image {
+            transition: transform 0.5s ease;
+        }
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+        .discount-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ef4444;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 0.5rem;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-item {
+            color: #4b5563;
+            padding: 0.75rem 1rem;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+        .dropdown-item:hover {
+            background-color: #f3f4f6;
+            color: #4f46e5;
+        }
+        .btn-primary {
+            background-color: #4f46e5;
+            color: white;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn-primary:hover {
+            background-color: #4338ca;
+            transform: translateY(-2px);
+        }
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        .footer-column {
+            margin-bottom: 1.5rem;
+        }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 100;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+        .mobile-menu.active {
+            display: block;
+        }
+        .mobile-menu-content {
+            background: #1f2937;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-top: 4rem;
+        }
+        .close-mobile-menu {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            color: white;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+        }
+    </style>
+</head>
+
+<body class="font-sans">
+    <!-- Barre de navigation principale -->
+    <nav class="bg-gray-900 text-white py-4 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <!-- Logo et titre -->
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-globe-africa text-2xl text-indigo-400"></i>
+                <span class="text-xl font-bold text-white">SanoussyBusness</span>
+            </div>
+            
+            <!-- Menu desktop -->
+            <div class="hidden md:flex space-x-8 nav-links">
+                <!-- Lien Accueil -->
+                <a href="#hero-section" class="nav-link flex items-center space-x-2 text-gray-300 hover:text-white transition">
+                    <i class="fas fa-home"></i>
+                    <span>Accueil</span>
+                </a>
+                
+                <!-- Menu Produits avec sous-menus -->
+                <div class="dropdown">
+                    <button class="nav-link flex items-center space-x-2 text-gray-300 hover:text-white transition">
+                        <i class="fas fa-box"></i>
+                        <span>Produits</span>
+                        <i class="fas fa-chevron-down text-xs mt-1"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#products-section" class="dropdown-item">
+                            <i class="fas fa-store mr-3 text-indigo-500"></i>Tous les produits
+                        </a>
+                        <a href="vetement.html" class="dropdown-item">
+                            <i class="fas fa-tshirt mr-3 text-indigo-500"></i>Vêtements
+                        </a>
+                        <a href="Aipod.html" class="dropdown-item">
+                            <i class="fas fa-headphones mr-3 text-indigo-500"></i>Accessoires
+                        </a>
+                        <!-- Nouveau sous-menu Voitures -->
+                        <a href="VOITURE.HTML" class="dropdown-item">
+                            <i class="fas fa-car mr-3 text-indigo-500"></i>Voitures
+                        </a>
+                        <!-- Nouveau sous-menu Multiservices -->
+                        <a href="multiservices.html" class="dropdown-item">
+                            <i class="fas fa-concierge-bell mr-3 text-indigo-500"></i>Multiservices
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Lien Contact -->
+                <a href="contact.html" class="nav-link flex items-center space-x-2 text-gray-300 hover:text-white transition">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+            </div>
+            
+            <!-- Bouton menu mobile -->
+            <button class="md:hidden mobile-menu-btn text-white focus:outline-none" id="mobileMenuBtn">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Menu mobile -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-mobile-menu" id="closeMobileMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-menu-content">
+            <a href="#hero-section" class="block py-3 px-4 text-white hover:bg-gray-700 rounded mb-2">
+                <i class="fas fa-home mr-3"></i>Accueil
+            </a>
+            
+            <div class="mb-2">
+                <div class="flex items-center justify-between py-3 px-4 text-white hover:bg-gray-700 rounded cursor-pointer" id="mobileProductsBtn">
+                    <div>
+                        <i class="fas fa-box mr-3"></i>Produits
+                    </div>
+                    <i class="fas fa-chevron-down transition-transform duration-200" id="mobileProductsArrow"></i>
+                </div>
+                <div class="pl-8 hidden" id="mobileProductsMenu">
+                    <a href="#products-section" class="block py-2 text-gray-300 hover:text-white">
+                        <i class="fas fa-store mr-3"></i>Tous les produits
+                    </a>
+                    <a href="vetement.html" class="block py-2 text-gray-300 hover:text-white">
+                        <i class="fas fa-tshirt mr-3"></i>Vêtements
+                    </a>
+                    <a href="Aipod.html" class="block py-2 text-gray-300 hover:text-white">
+                        <i class="fas fa-headphones mr-3"></i>Accessoires
+                    </a>
+                    <a href="VOITURE.HTML" class="block py-2 text-gray-300 hover:text-white">
+                        <i class="fas fa-car mr-3"></i>Voitures
+                    </a>
+                    <a href="multiservices.html" class="block py-2 text-gray-300 hover:text-white">
+                        <i class="fas fa-concierge-bell mr-3"></i>Multiservices
+                    </a>
+                </div>
+            </div>
+            
+            <a href="contact.html" class="block py-3 px-4 text-white hover:bg-gray-700 rounded">
+                <i class="fas fa-envelope mr-3"></i>Contact
+            </a>
+        </div>
+    </div>
+
+    <!-- Section Hero -->
+    <section id="hero-section" class="hero-gradient text-white py-16 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <!-- Titre principal -->
+            <h1 class="text-3xl md:text-6xl font-bold mb-6">Bienvenue Chez SanoussyBusness</h1>
+            <p class="text-lg md:text-2xl mb-8 max-w-2xl mx-auto">Votre boutique en ligne premium pour tous vos besoins en Guinée. Découvrez nos offres exclusives dès maintenant !</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <!-- Bouton pour voir les promotions -->
+                <a href="#products-section" class="block">
+                    <button class="btn-primary font-semibold py-3 px-8 rounded-lg w-full sm:w-auto">
+                        Voir la Boutique
+                    </button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Produits Populaires -->
+    <section id="products-section" class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <!-- Titre de la section -->
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4 md:mb-0">Nos Produits Populaires</h2>
+                <!-- Lien pour voir tous les produits -->
+                <a href="Aipod.html" class="text-indigo-600 font-medium hover:underline flex items-center">
+                    Voir tout <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Produit 1 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative h-48 sm:h-64 overflow-hidden">
+                        <!-- Image du produit -->
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+                             alt="Produit 1" class="w-full h-full object-cover product-image" loading="lazy">
+                        <!-- Étiquette de promotion -->
+                        <div class="discount-badge">-20%</div>
+                        <!-- Bouton rapide -->
+                        <button class="absolute bottom-0 left-0 right-0 bg-indigo-600 text-white py-2 opacity-0 hover:opacity-100 transition-opacity duration-300 w-full">
+                            <i class="fas fa-shopping-cart mr-2"></i>Ajouter au panier
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <!-- Nom du produit -->
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Chaussures de Sport</h3>
+                        <!-- Évaluation -->
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-gray-500 text-sm ml-2">(24)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <!-- Prix avant réduction -->
+                            <span class="text-gray-400 line-through text-sm">120 000 GNF</span>
+                            <!-- Prix après réduction -->
+                            <span class="text-indigo-600 font-bold">100 000 GNF</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Produit 2 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative h-48 sm:h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+                             alt="Produit 2" class="w-full h-full object-cover product-image" loading="lazy">
+                        <button class="absolute bottom-0 left-0 right-0 bg-indigo-600 text-white py-2 opacity-0 hover:opacity-100 transition-opacity duration-300 w-full">
+                            <i class="fas fa-shopping-cart mr-2"></i>Ajouter au panier
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Montre Connectée</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="text-gray-500 text-sm ml-2">(18)</span>
+                        </div>
+                        <span class="text-indigo-600 font-bold block text-right">150 000 GNF</span>
+                    </div>
+                </div>
+                
+                <!-- Produit 3 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative h-48 sm:h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+                             alt="Produit 3" class="w-full h-full object-cover product-image" loading="lazy">
+                        <div class="discount-badge">-10%</div>
+                        <button class="absolute bottom-0 left-0 right-0 bg-indigo-600 text-white py-2 opacity-0 hover:opacity-100 transition-opacity duration-300 w-full">
+                            <i class="fas fa-shopping-cart mr-2"></i>Ajouter au panier
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Écouteurs Bluetooth</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-gray-500 text-sm ml-2">(32)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-400 line-through text-sm">100 000 GNF</span>
+                            <span class="text-indigo-600 font-bold">90 000 GNF</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Produit 4 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative h-48 sm:h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+                             alt="Produit 4" class="w-full h-full object-cover product-image" loading="lazy">
+                        <button class="absolute bottom-0 left-0 right-0 bg-indigo-600 text-white py-2 opacity-0 hover:opacity-100 transition-opacity duration-300 w-full">
+                            <i class="fas fa-shopping-cart mr-2"></i>Ajouter au panier
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Sac à dos</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-gray-500 text-sm ml-2">(15)</span>
+                        </div>
+                        <span class="text-indigo-600 font-bold block text-right">75 000 GNF</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Catégories -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <!-- Titre de la section -->
+            <h2 class="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-8">Nos Catégories</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <!-- Catégorie Smartphones -->
+                <a href="#" class="block bg-gray-50 rounded-lg overflow-hidden hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="h-32 md:h-40 bg-indigo-100 flex items-center justify-center">
+                        <i class="fas fa-mobile-alt text-4xl md:text-5xl text-indigo-600"></i>
+                    </div>
+                    <div class="p-3 md:p-4 text-center">
+                        <h3 class="font-medium text-gray-800 text-sm md:text-base">Smartphones</h3>
+                        <p class="text-gray-500 text-xs md:text-sm mt-1">Découvrez nos derniers modèles</p>
+                    </div>
+                </a>
+                <!-- Catégorie Ordinateurs -->
+                <a href="#" class="block bg-gray-50 rounded-lg overflow-hidden hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="h-32 md:h-40 bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-laptop text-4xl md:text-5xl text-blue-600"></i>
+                    </div>
+                    <div class="p-3 md:p-4 text-center">
+                        <h3 class="font-medium text-gray-800 text-sm md:text-base">Ordinateurs</h3>
+                        <p class="text-gray-500 text-xs md:text-sm mt-1">Performants et élégants</p>
+                    </div>
+                </a>
+                <!-- Catégorie Accessoires -->
+                <a href="#" class="block bg-gray-50 rounded-lg overflow-hidden hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="h-32 md:h-40 bg-green-100 flex items-center justify-center">
+                        <i class="fas fa-headphones text-4xl md:text-5xl text-green-600"></i>
+                    </div>
+                    <div class="p-3 md:p-4 text-center">
+                        <h3 class="font-medium text-gray-800 text-sm md:text-base">Accessoires</h3>
+                        <p class="text-gray-500 text-xs md:text-sm mt-1">Pour compléter votre style</p>
+                    </div>
+                </a>
+                <!-- Catégorie Vêtements -->
+                <a href="#" class="block bg-gray-50 rounded-lg overflow-hidden hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="h-32 md:h-40 bg-red-100 flex items-center justify-center">
+                        <i class="fas fa-tshirt text-4xl md:text-5xl text-red-600"></i>
+                    </div>
+                    <div class="p-3 md:p-4 text-center">
+                        <h3 class="font-medium text-gray-800 text-sm md:text-base">Vêtements</h3>
+                        <p class="text-gray-500 text-xs md:text-sm mt-1">Tendances et confortables</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Parlez de Nous -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-6">Parlez de Nous</h2>
+            <p class="text-base md:text-lg text-gray-600 text-center max-w-2xl mx-auto mb-6">SanoussyBusness est une plateforme de référence de produits pour répondre aux besoins de nos clients. Nous sommes fiers de vous servir de qualité avec des prix exceptionnels.
+                <br> Votre satisfaction est notre préoccupation.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+                <!-- Engagement 1 -->
+                <div class="bg-white p-4 md:p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-indigo-600 text-3xl md:text-4xl mb-3 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-indigo-50 mx-auto">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-semibold text-gray-800 text-center">Livraison Rapide</h3>
+                    <p class="text-gray-600 text-center mt-1 text-sm md:text-base">Nous assurons une livraison express dans toute la Guinée.</p>
+                </div>
+                <!-- Engagement 2 -->
+                <div class="bg-white p-4 md:p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-indigo-600 text-3xl md:text-4xl mb-3 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-indigo-50 mx-auto">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-semibold text-gray-800 text-center">Paiement Sécurisé</h3>
+                    <p class="text-gray-600 text-center mt-1 text-sm md:text-base">Transactions 100% sécurisées, en ligne ou en main propre.</p>
+                </div>
+                <!-- Engagement 3 -->
+                <div class="bg-white p-4 md:p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-indigo-600 text-3xl md:text-4xl mb-3 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-indigo-50 mx-auto">
+                        <i class="fas fa-thumbs-up"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-semibold text-gray-800 text-center">Satisfaction Garantie</h3>
+                    <p class="text-gray-600 text-center mt-1 text-sm md:text-base">Notre priorité est votre satisfaction à 100%.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page amélioré -->
+    <footer class="bg-gray-900 text-white py-8 md:py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 footer-container">
+                <!-- Colonne Logo et description -->
+                <div class="footer-logo">
+                    <div class="flex items-center space-x-2 mb-3 md:mb-4">
+                        <i class="fas fa-globe-africa text-2xl text-indigo-400"></i>
+                        <span class="text-xl font-bold">SanoussyBusness</span>
+                    </div>
+                    <p class="text-gray-400 mb-3 md:mb-4 text-sm md:text-base">Votre boutique en ligne premium pour tous vos besoins en Guinée.</p>
+                    <div class="flex space-x-3 md:space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition text-lg md:text-xl"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition text-lg md:text-xl"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition text-lg md:text-xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition text-lg md:text-xl"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Colonne Liens rapides -->
+                <div class="footer-column">
+                    <h3 class="text-lg font-semibold mb-3 md:mb-4 border-b border-gray-700 pb-2">Liens rapides</h3>
+                    <ul class="space-y-2 md:space-y-3">
+                        <li><a href="#hero-section" class="text-gray-400 hover:text-white transition flex items-center text-sm md:text-base">
+                            <i class="fas fa-chevron-right text-xs mr-2 text-indigo-400"></i>Accueil
+                        </a></li>
+                        <li><a href="#products-section" class="text-gray-400 hover:text-white transition flex items-center text-sm md:text-base">
+                            <i class="fas fa-chevron-right text-xs mr-2 text-indigo-400"></i>Produits
+                        </a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition flex items-center text-sm md:text-base">
+                            <i class="fas fa-chevron-right text-xs mr-2 text-indigo-400"></i>Contact
+                        </a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition flex items-center text-sm md:text-base">
+                            <i class="fas fa-chevron-right text-xs mr-2 text-indigo-400"></i>Promotions
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <!-- Colonne Catégories -->
+                <div class="footer-column">
+                    <h3 class="text-lg font-semibold mb-3 md:mb-4 border-b border-gray-700 pb-2">Catégories</h3>
+                    <ul class="space-y-2 md:space-y-3">
+                        <li><a href="vetement.html" class="text-gray-400 hover:text-white transition flex items-center text-sm md:text-base">
+                            <i class="fas fa-chevron-right text-xs mr-2 text-indigo-400"></i>Vêtements
+                        </a></li>
+                        <li><a href="Aipods.html.html" class="text-gray-400 hover:text-white transition flex items-center text-sm md:text-base">
+                            <i class="fas fa-chevron-right text-xs mr-2 text-indigo-400"></i>Accessoires
+                        </a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition flex items-center text-sm md:text-base">
+                            <i class="fas fa-chevron-right text-xs mr-2 text-indigo-400"></i>Voitures
+                        </a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition flex items-center text-sm md:text-base">
+                            <i class="fas fa-chevron-right text-xs mr-2 text-indigo-400"></i>Multiservices
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <!-- Colonne Contact -->
+                <div class="footer-column">
+                    <h3 class="text-lg font-semibold mb-3 md:mb-4 border-b border-gray-700 pb-2">Contactez-nous</h3>
+                    <ul class="space-y-2 md:space-y-3">
+                        <li class="flex items-start text-gray-400 text-sm md:text-base">
+                            <i class="fas fa-envelope mt-1 mr-3 text-indigo-400"></i>
+                            <span>contact@SanoussyBusiness.com</span>
+                        </li>
+                        <li class="flex items-start text-gray-400 text-sm md:text-base">
+                            <i class="fas fa-phone mt-1 mr-3 text-indigo-400"></i>
+                            <span>+224611657041</span>
+                        </li>
+                        <li class="flex items-start text-gray-400 text-sm md:text-base">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-indigo-400"></i>
+                            <span>Conakry, Guinée</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-6 md:mt-8 pt-6 md:pt-8 text-center text-gray-400 text-sm md:text-base">
+                <p>© 2025 SanoussyBusness. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Gestion du menu mobile
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const closeMobileMenu = document.getElementById('closeMobileMenu');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileProductsBtn = document.getElementById('mobileProductsBtn');
+            const mobileProductsMenu = document.getElementById('mobileProductsMenu');
+            const mobileProductsArrow = document.getElementById('mobileProductsArrow');
+            
+            // Ouvrir le menu mobile
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.add('active');
+            });
+            
+            // Fermer le menu mobile
+            closeMobileMenu.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+            });
+            
+            // Gestion du sous-menu Produits sur mobile
+            mobileProductsBtn.addEventListener('click', function() {
+                mobileProductsMenu.classList.toggle('hidden');
+                mobileProductsArrow.classList.toggle('transform');
+                mobileProductsArrow.classList.toggle('rotate-180');
+            });
+            
+            // Fermer le menu quand on clique sur un lien
+            const mobileLinks = document.querySelectorAll('#mobileMenu a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
