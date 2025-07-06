@@ -1,7 +1,6 @@
-/* styles.css */
 :root {
-    --primary-color: #6a5acd;  /* Nouvelle couleur principale - SlateBlue */
-    --primary-dark: #483d8b;   /* DarkSlateBlue */
+    --primary-color: #6a5acd;
+    --primary-dark: #483d8b;
     --secondary-color: #f8f9fa;
     --dark-color: #343a40;
     --text-color: #495057;
@@ -20,7 +19,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Header stylé */
 header {
     background: var(--gradient);
     color: white;
@@ -67,7 +65,6 @@ header p {
     animation: fadeIn 1s both 0.3s;
 }
 
-/* Navigation */
 .main-nav {
     background: white;
     box-shadow: var(--shadow);
@@ -93,11 +90,11 @@ header p {
     font-weight: 600;
 }
 
-/* Sections produits */
+/* Zone voitures agrandie */
 .category-section {
     margin: 5em auto;
-    max-width: 1400px;
-    padding: 0 1.5em;
+    max-width: 1800px; /* élargi */
+    padding: 0 2em;
 }
 
 .category-title {
@@ -122,12 +119,11 @@ header p {
 
 .photo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* plus de colonnes */
     gap: 2em;
     margin-bottom: 3em;
 }
 
-/* Cartes produits */
 .product-card {
     background: white;
     border-radius: 16px;
@@ -154,7 +150,7 @@ header p {
 
 .product-image {
     width: 100%;
-    height: 320px;
+    height: 380px; /* agrandi */
     background-size: cover;
     background-position: center;
     transition: transform 0.8s ease;
@@ -230,7 +226,6 @@ header p {
     box-shadow: 0 8px 20px rgba(106, 90, 205, 0.4);
 }
 
-/* Section formulaire */
 .comment-section {
     background: white;
     border-radius: 16px;
@@ -303,7 +298,6 @@ header p {
     box-shadow: 0 8px 20px rgba(106, 90, 205, 0.4);
 }
 
-/* Footer */
 footer {
     background: var(--dark-color);
     color: white;
@@ -357,16 +351,6 @@ footer::before {
     box-shadow: 0 5px 15px rgba(106, 90, 205, 0.4);
 }
 
-.copyright {
-    opacity: 0.8;
-    font-size: 0.9em;
-    margin-top: 2em;
-}
-
-.back-to-home {
-    margin-top: 1.5em;
-}
-
 .back-to-home a {
     display: inline-flex;
     align-items: center;
@@ -389,7 +373,6 @@ footer::before {
     margin-right: 8px;
 }
 
-/* Animations */
 @keyframes float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
@@ -400,7 +383,6 @@ footer::before {
     animation: float 3s ease-in-out infinite;
 }
 
-/* Alertes personnalisées */
 .custom-alert {
     position: fixed;
     top: 20px;
@@ -426,16 +408,15 @@ footer::before {
     border-left-color: #ff4757;
 }
 
-/* Responsive */
 @media (max-width: 992px) {
     header h1 {
         font-size: 2.8em;
     }
-    
+
     header p {
         font-size: 1.1em;
     }
-    
+
     .category-title, .section-title {
         font-size: 2em;
     }
@@ -447,39 +428,39 @@ footer::before {
         clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
         margin-bottom: -30px;
     }
-    
+
     header h1 {
         font-size: 2.2em;
     }
-    
+
     header p {
         font-size: 1em;
         padding: 0 1em;
     }
-    
+
     .photo-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .product-image {
         height: 300px;
     }
-    
+
     .comment-section {
         padding: 2em 1.5em;
         margin: 2em 1.5em;
     }
-    
+
     .category-title, .section-title {
         font-size: 1.8em;
     }
-    
+
     .custom-alert {
         right: 10px;
         left: 10px;
         max-width: none;
     }
-    
+
     footer {
         clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
     }
